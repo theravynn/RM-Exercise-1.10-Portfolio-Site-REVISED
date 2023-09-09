@@ -1,0 +1,257 @@
+/* ------------COLOR PALATTE 
+Primary color/Background color (peach): #f7d8d8
+Secondary color/Button color (dark peach): #b76868
+Text Color: (black): #000000
+Link Color: (green): #357b70
+Dark Grey: #2b2b2b
+------------*/
+
+/* ------------DEFINE CSS VARIABLES------------ */ 
+:root {
+  --primary-color: #f7d8d8;
+  --primary-color-lighter: #{lighten(#f7d8d8, 20%)};
+  --primary-color-darker: #{darken(#f7d8d8, 20%)};
+  --secondary-color: #b76868;
+  --text-color: #000000;
+  --link-color: #357b70;
+  --link-color-darker: #05676e;  /* Darkened version of --link-color */
+  --link-color-lighter: #489c79; /* Lightened version of --link-color */
+  --dark-grey: #2b2b2b;
+  --heading-font-weight: 700;
+  --base-font-size: 16px;
+}
+
+/* ------------SHARED BOX STYLES------------ */ 
+
+box-shared {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+    box-shadow: none;
+  }
+box-sizing { 
+  border-block:var(--dark-grey)
+}
+
+/* ------------GLOBAL STYLES------------ */ 
+
+
+body {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  font-size: var(--base-font-size);
+  line-height: 1.6;
+} 
+  .bg-darker {
+    background-color: var(--primary-color-darker)
+  }
+  
+  .bg-lighter {
+    background-color: var(--primary-color-lighter);
+  }
+
+  h1, h2, h3 {
+    font-weight: var(--heading-font-weight);
+  }
+    h1 {
+      font-size: calc(var(--base-font-size) * 1.875);
+    }
+    
+    h2 {
+      font-size: calc(var(--base-font-size) * 1.5);
+    }
+    
+    h3 {
+      font-size: calc(var(--base-font-size) * 1.125);
+    }
+  
+p {
+  color: var(--text-color)
+}  
+a {
+  color: var(--link-color);
+}
+  :hover, focus {
+    text-decoration: none;
+  }
+
+  :visited {
+    color: var(--link-color-darker);
+  }
+
+  :active {
+    color: var(--link-color-lighter);
+  }
+
+/*------------BUTTON------------*/
+
+button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+  background-color: #357b70;
+  color: white;
+  text-decoration: none;
+  /*adds spacing to the button (this will be discussed more in-depth later) */
+  padding: 10px;
+  border-radius: 3px;
+  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+button:hover, button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+}
+
+.button__secondary {
+  background-color: #e0b354;
+  color: #2b2b2b;
+}
+
+/* ------------NAVIGATION------------*/
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.profile__portrait {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ------------GRID FALLBACK------------ */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.grid__item {
+  background-color: lightgray;
+}
+
+.grid__item:last-child {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.button, button {
+  /* overwrites browser defaults */
+  /* resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  /* style button */
+  background-color: #357b70;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  /* width of the border, type, color */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: 0.2s opacity;
+}
+
+/* ------------ANIMATION------------*/
+
+  @keyframes color-change {
+    0% {
+      fill: #edc655;
+    }
+    50% {
+      fill: #fcffad;
+    }
+    100% {
+      fill: #f76414;
+    }
+  }
+
+  .sun {
+    animation: 4s color-change infinite alternate linear;
+  }
+
+  @keyframes cloud-move {
+    from {
+      transform: translate(0, 50px);
+    }
+    to {
+      transform: translate(200px, 50px);
+    }
+  }
+
+  .cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(446px, 48px);
+  }
+  to {
+    transform: translate(100px, 48px);
+  }
+}
+
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+/* ------------MEDIA------------*/
+/* makes website better for smaller screen sizes, should always be at the end of css */ 
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
