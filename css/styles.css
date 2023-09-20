@@ -75,6 +75,7 @@ body {
 p {
   color: var(--text-color); text-align: center;
 }
+
 a {
   color: var(--link-color);
 }

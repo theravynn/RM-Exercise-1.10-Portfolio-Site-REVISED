@@ -72,9 +72,14 @@ body {
     h3 {
       font-size: calc(var(--base-font-size) * 1.125);
     }
-  
+
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}  
 p {
-  color: var(--text-color)
+  color: var(--text-color); text-align: center;
 }  
 a {
   color: var(--link-color);
@@ -165,9 +170,10 @@ button:hover, button:focus {
 
 /* ------------GRID FALLBACK------------ */
 
-.grid {
+.center-grid {
   display: -ms-grid;
   display: grid;
+  place-items: center;
   -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
