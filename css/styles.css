@@ -1,5 +1,6 @@
 /* ------------COLOR PALATTE 
-Primary color/Background color (peach): #f7d8d8
+Primary color/Background color (light peach): #f7d8d8
+Navigation Header Background color (peach): #ffcac2
 Secondary color/Button color (dark peach): #b76868
 Text Color: (black): #000000
 Link Color: (green): #357b70
@@ -33,7 +34,6 @@ box-sizing {
 }
 
 /* ------------GLOBAL STYLES------------ */ 
-
 
 body {
   background-color: var(--primary-color);
@@ -78,11 +78,7 @@ body {
 p {
   color: var(--text-color); text-align: center;
 }
-.center-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 /* This will center items both vertically and horizontally */
 .center-grid {
   display: grid;
@@ -104,7 +100,7 @@ a {
     color: var(--link-color-lighter);
   }
 
-/*------------BUTTON------------*/
+/*------------BUTTONS------------*/
 
 button {
   /* overwrites browser defaults and resets the border */
