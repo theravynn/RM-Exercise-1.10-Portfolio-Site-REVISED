@@ -107,6 +107,11 @@ a {
     color: var(--link-color-lighter);
   }
 
+  .standard-label, input, textarea {
+    display: block;
+  }
+  
+
 /*------------BUTTON------------*/
 
 button {
