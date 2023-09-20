@@ -73,14 +73,27 @@ body {
       font-size: calc(var(--base-font-size) * 1.125);
     }
 
+        /* This will center any div with the class 'center-div' */
+.center-div {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+/* This will center text in all paragraph tags */
+p {
+  color: var(--text-color); text-align: center;
+}
 .center-flex {
   display: flex;
   justify-content: center;
   align-items: center;
-}  
-p {
-  color: var(--text-color); text-align: center;
-}  
+}
+/* This will center items both vertically and horizontally */
+.center-grid {
+  display: grid;
+  place-items: center;
+}
+
 a {
   color: var(--link-color);
 }
