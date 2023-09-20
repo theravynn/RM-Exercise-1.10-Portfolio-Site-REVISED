@@ -45,7 +45,7 @@ box-sizing {
 body {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-weight: 400;
   font-size: var(--base-font-size);
   line-height: 1.6;
