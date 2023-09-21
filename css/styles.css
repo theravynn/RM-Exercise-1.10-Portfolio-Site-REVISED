@@ -102,6 +102,7 @@ a {
 
   .standard-label, input, textarea {
     display: block;
+    align-items: flex-start;
   }
   
 
